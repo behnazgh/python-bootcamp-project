@@ -1,0 +1,47 @@
+
+def tst():
+    #word = input("enter an sentence : ")
+    word = "cbbabbdk"
+    letters = list(word)
+    list1 =[]
+    list2 = []
+    resultList = []
+    for i in range(len(letters)-1):
+        if (len(list1) == 0):
+            list1.append(letters[i])
+            list1.append(letters[i+1])
+
+            list2.append(letters[i+1])
+            list2.append(letters[i])
+            print("list1",list1)
+            print("list2",list2)
+        #if (list1 != list2) and len(list1) > 2 :
+        if (list1 == list2):
+           # del list1[-1]
+            resultList.append(list1)
+            print("resultList " , resultList)
+        else:
+            list1.clear() 
+            list2.clear()   
+    if len(resultList) > 0 :
+        longest = max(resultList, key=len)
+        print(longest)
+
+
+
+def tst2():    
+    word1 = "kbabdc"
+    word2 = word1[::-1]
+    text = "hello"
+    result = []
+    for i in range(len(word1) - 1):
+        for j in range(i + 1, len(word1) + 1):
+            if word1[i:j] in word2:
+                #print ("result " , i , ": ",word1[i:j] )
+                result.append(word1[i:j])
+
+    result = list(set(result))
+    print ( max(result, key=len))
+
+
+tst2()
